@@ -1,0 +1,88 @@
+/* home_page__heading */
+.home_page__heading {
+    background-color: blue;
+    min-height: 80px;
+}
+
+.home_page__heading p {
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    padding-top: 20px;
+    padding-left: 10px;
+}
+
+/* home_page__navbar  */
+.home_page__navbar {
+    overflow: hidden;
+    background-color: rgb(28, 28, 120);
+    font-family: Arial;
+
+    display: flex;
+    /* --> cho 2 thẻ ul nằm ngang cùng 1 hàng */
+    justify-content: space-between;/* đẩy 2 khối ra xa nhau*/
+}
+
+.home_page__navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 5px;
+    text-decoration: none;
+}
+
+.home_page__navbar__dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.home_page__navbar__dropdown__content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.home_page__navbar__dropdown__content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.home_page__navbar__dropdown__content a:hover {
+    background-color: #ddd;
+}
+
+.home_page__navbar__dropdown .home_page__navbar__dropdown_btn 
+{
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+}
+
+.home_page__navbar__dropdown:hover .home_page__navbar__dropdown__content {
+    display: block;
+}
+
+.home_page__navbar a:hover, .home_page__navbar__dropdown:hover, .home_page__navbar__dropdown_btn {
+    background-color: red;
+}
+
+.home_page__navbar__login_logout {
+    margin-right: 10px;
+}
+
+.timeCurrent {
+    padding-top: 5px;
+}

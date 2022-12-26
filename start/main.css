@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: antiquewhite;
+}
+
+.startPage {
+    height: 300px;
+    padding-top: 100px;
+
+    font-weight: 700;
+    font-size: 2em;
+
+    text-align: center;
+}
+
+.conntentPage {
+    text-align: center;
+}
+
+.conntentPage input[type="submit"] {
+    width: 150px;
+    border-radius: 10px;
+    transition: 0.25px;
+    cursor: pointer;
+    font-size: 2em;
+    opacity: 0.8;
+}
+
+.conntentPage input[type="submit"]:hover {
+    color: red;
+    width: 200px;
+    height: 100px;
+    opacity: 1;
+    font-weight: 900;
+}

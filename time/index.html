@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Current</title>
+
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+
+</head>
+<body>
+    <div class="time timeCurrent">
+        <p>Thời gian hiện tại</p>
+
+        <span id="timeCurrent-hour">0</span> <span>:</span>
+        <span id="timeCurrent-minute">0</span> <span>:</span>
+        <span id="timeCurrent-second">0</span> 
+        <span id="timeCurrent-AMPM">AM</span><br>
+
+        <span id="timeCurrent-day">0</span>  <span>/</span>
+        <span id="timeCurrent-month">0</span> <span>/</span>
+        <span id="timeCurrent-year">0</span>
+    </div>
+</body>
+
+<script src="./app.js"></script>
+
+</html>

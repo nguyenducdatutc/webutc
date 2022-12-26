@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device 1</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../Home/style_end.css">
+    <link rel="stylesheet" href="../Home/style_heading_navbar.css">
+
+
+    <link rel="stylesheet" href="../../time/style.css">
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+
+</head>
+<body>
+    <div class="device_1">
+         <!-- home_page__heading -->
+         <div class="home_page__heading">
+            <p>Hệ thống giám sát</p>
+        </div>
+
+        <!-- home_page__navbar -->
+        <div class="home_page__navbar">
+            <div class="home_page__navbar--left">
+                <a href="./../Home/index.html">Trang chủ</a>
+
+                <div class="home_page__navbar__dropdown">
+    
+                  <button class="home_page__navbar__dropdown_btn">Thiết bị
+                    <i class="home_page__navbar__dropdown_btn_notify"></i>
+                  </button>
+    
+                  <div class="home_page__navbar__dropdown__content">
+                    <a href="./../Sensor_1/index.html">Thiết bị 1</a>
+                    <a href="#">Thiết bị 2</a>
+                  </div>
+    
+                </div>
+            </div>
+
+            <div class="timeCurrent">   
+                <span id="timeCurrent-day">0</span>  <span>/</span>
+                <span id="timeCurrent-month">0</span> <span>/</span>
+                <span id="timeCurrent-year">0</span><br>
+
+                <span id="timeCurrent-hour">0</span> <span>:</span>
+                <span id="timeCurrent-minute">0</span> <span>:</span>
+                <span id="timeCurrent-second">0</span> 
+                <!-- <span id="timeCurrent-AMPM">AM</span>               -->
+            </div>
+
+            <div class="home_page__navbar__login_logout">
+                <a href="../../user/ChangeInformation/index.html">Tài khoản</a>
+                <a href="./../../user/Login/index.html">Đăng xuất</a>
+            </div>
+           
+        </div>
+
+        <!-- Device 1 content -->
+        <div class="device_1__content">
+            <div class="block_1 device_1__content--item">
+                <div class="block_1--item">
+                    <p><b>Thiết bị 2</b></p>
+                    <br>
+                    <p>Trạng thái:</p><br>
+                    <p id="logoCo">Co</p>
+                    <p id="logoGas">Gas</p>
+                    <p id="logoBui">Bụi</p>
+                </div>
+                
+                <div class="block_1--item">
+                    <br>
+                    <p id="status_current">An toàn</p><br>
+                    <span id="valueGetCo">00</span> 
+                    <span id="donVi_Co">ppm</span><br>
+
+                    <span id="valueGetGas">00 </span> 
+                    <span id="donVi_Gas" > ppm </span> <br>
+
+                    <span id="valueGetBui">00</span> 
+                    <span id="donVi_Bui" >ppm</span><br>
+                </div>
+
+            </div>
+
+
+            <div class="block_2 device_1__content--item">
+                <div class="block_2--item">
+                    <br><br>
+                    <p>Giá trị ngưỡng</p>
+                    <br>
+                    <p>Co</p>
+                    <p>Gas</p>
+                    <p>Bụi</p>
+                </div>
+                
+                <div class="block_2--item">
+                    <br><br><br><br>
+                    <span id="valueSetCo">00</span> <span>ppm</span><br>
+                    <span id="valueSetGas">00</span> <span>ppm</span><br>
+                    <span id="valueSetBui">00</span> <span>ppm</span><br>
+                </div>
+
+                <div class="block_2--item">
+                    <br><br><br><br>
+                    <input type="text" name="changeValueCo" placeholder="Nhập giá trị Co" id="inputValueCo"><br>
+                    <input type="text" name="changeValueGas" placeholder="Nhập giá trị Gas" id="inputValueGas"><br>
+                    <input type="text" name="changeValueBui" placeholder="Nhập giá trị Bụi" id="inputValueBui">
+                </div>
+
+                <div class="block_2--item">
+                    <br><br><br><br>
+                    <input type="submit" name="" value="Cập nhật" id= "subValueCo"><br>
+                    <input type="submit" name="" value="Cập nhật" id= "subValueGas"><br>
+                    <input type="submit" name="" value="Cập nhật" id= "subValueBui">
+                </div>
+            </div>
+        </div>
+
+         <!-- Device 1 information -->
+        <div class="information_device">
+            <div class="block_3 information_device--item">
+                <div>
+                    <p>Vị trí lắp đặt</p>
+                    <br>
+                    <p id="location_display">Không xác định</p>
+                </div>
+                
+                <div>
+                    <p>Thay đổi vị trí</p>
+                    <br>
+
+                    <select id="location_current">
+                        <option value="Không xác định được"></option>
+                        <option value="An Giang">An Giang</option>
+                        <option value="Bà Rịa Vũng Tàu">Bà Rịa Vũng Tàu</option>
+                        <option value="Bạc Liêu">Bạc Liêu</option>
+                        <option value="Bắc Giang">Bắc Giang</option>
+                        <option value="Bắc Kạn">Bắc Kạn</option>
+                        <option value="Bắc Ninh">Bắc Ninh</option>
+                        <option value="Bến Tre">Bến Tre</option>
+                        <option value="Bình Dương">Bình Dương</option>
+                        <option value="Bình Định">Bình Định</option>	
+                        <option value="Bình Phước">Bình Phước</option>
+                        <option value="Bình Thuận">Bình Thuận</option>
+                        <option value="Cà Mau">Cà Mau</option>
+                        <option value="Cao Bằng">Cao Bằng</option>
+                        <option value="Cần Thơ">Cần Thơ</option>
+                        <option value="Đà Nẵng">Đà Nẵng</option>
+                        <option value="Đắk Lắk">Đắk Lắk</option>
+                        <option value="Đắk Nông">Đắk Nông</option>
+                        <option value="Điện Biên">Điện Biên</option>
+                        <option value="Đồng Nai">Đồng Nai</option>
+                        <option value="Đồng Tháp">Đồng Tháp</option>
+                        <option value="Gia Lai">Gia Lai</option>
+                        <option value="Hà Giang">Hà Giang</option>
+                        <option value="Hà Nam">Hà Nam</option>
+                        <option value="Hà Nội">Hà Nội</option>
+                        <option value="Hà Tĩnh">Hà Tĩnh</option>
+                        <option value="Hải Dương">Hải Dương</option>
+                        <option value="Hải Phòng">Hải Phòng</option>
+                        <option value="Hậu Giang">Hậu Giang</option>
+                        <option value="Hòa Bình">Hòa Bình</option>
+                        <option value="Thành phố Hồ Chí Minh">Thành phố Hồ Chí Minh</option>	
+                        <option value="Hưng Yên">Hưng Yên</option>
+                        <option value="Khánh Hòa">Khánh Hòa</option>
+                        <option value="Kiên Giang">Kiên Giang</option>
+                        <option value="Kon Tum">Kon Tum</option>
+                        <option value="Lai Châu">Lai Châu</option>
+                        <option value="Lạng Sơn">Lạng Sơn</option>
+                        <option value="Lào Cai">Lào Cai</option>
+                        <option value="Lâm Đồng">Lâm Đồng</option>
+                        <option value="Long An">Long An</option>
+                        <option value="Nam Định">Nam Định</option>	
+                        <option value="Nghệ An">Nghệ An</option>
+                        <option value="Ninh Bình">Ninh Bình</option>
+                        <option value="Ninh Thuận">Ninh Thuận</option>
+                        <option value="Phú Thọ">Phú Thọ</option>
+                        <option value="Phú Yên">Phú Yên/option>
+                        <option value="Quảng Bình">Quảng Bình</option>
+                        <option value="Quảng Nam">Quảng Nam</option>
+                        <option value="Quảng Ngãi">Quảng Ngãi</option>
+                        <option value="Quảng Ninh">Quảng Ninh</option>
+                        <option value="Quảng Trị">Quảng Trị</option>	
+                        <option value="Sóc Trăng">Sóc Trăng</option>
+                        <option value="Sơn La">Sơn La</option>
+                        <option value="Tây Ninh">Tây Ninh</option>
+                        <option value="Thái Bình">Thái Bình</option>
+                        <option value="Thái Nguyên">Thái Nguyên</option>
+                        <option value="Thanh Hóa">Thanh Hóa</option>
+                        <option value="Thừa Thiên Huế">Thừa Thiên Huế</option>
+                        <option value="Tiền Giang">Tiền Giang</option>
+                        <option value="Trà Vinh">Trà Vinh</option>
+                        <option value="Tuyên Quang">Tuyên Quang</option>
+                        <option value="Vĩnh Long">Vĩnh Long</option>
+                        <option value="Vĩnh Phúc">Vĩnh Phúc</option>
+                        <option value="Yên Bái">Yên Bái</option>
+                    </select>
+
+                    <input type="submit" name="" value="Cập nhật" id= "subTinh">
+                </div>
+
+            </div>
+
+            <div class="block_4 information_device--item">
+                <p>Thời gian bảo hành</p>
+
+                <div>
+                    <span>Còn</span> 
+                    <span id="thoi_gian_bao_hanh">38</span> 
+                    <span>tháng</span>     
+                </div>
+            </div>
+        </div>
+
+
+        <!-- home_page__end -->
+        <div class="home_page__end">
+            <span></span>    <!-- Xoá dòng này, chữ hiện thị sẽ không bám phải nữa -->
+            <span>Giao diện web hệ thống giám sát khí thải độc hại trong giao thông (Version1.1)</sp>
+        </div>
+    </div>    
+</body>
+
+<script src="./app.js"></script>
+
+</html>

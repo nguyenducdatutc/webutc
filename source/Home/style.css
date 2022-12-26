@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+}
+
+body {
+    background-color: antiquewhite;
+}
+
+ /* home_page__content */
+.home_page__content {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+@media (min-width: 800px) {
+    .home_page__content {
+        flex-direction: row;
+    }
+}
+
+.home_page__content--item {
+    padding: 12px 16px;
+    margin-top: 16px;
+
+    /* xét kích thước main size */
+    flex-basis: 20%;
+}
+
+.home_page__content--item:nth-child(1) {
+    background-color: rgb(192, 227, 200);
+}
+
+.home_page__content--item:nth-child(2) {
+    background-color: rgb(227, 200, 100);
+}
+
+.home_page__content--item:nth-child(3) {
+    background-color: rgb(192, 227, 0);
+}
+
+/* home_page__content child  */
+.block_1 {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+#status_current1 {
+    color: green;
+    font-size: 1.2em;
+    font-weight: 900;
+}
+
+.block_2 {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#status_current2 {
+    color: green;
+    font-size: 1.2em;
+    font-weight: 900;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

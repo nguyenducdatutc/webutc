@@ -1,0 +1,28 @@
+.changeTimeDisplay {
+    margin-top: 5px;
+
+    display: flex;
+    flex-direction: column;
+    
+    flex-wrap: nowrap; 
+
+    align-items: center;
+}
+
+@media (min-width: 800px) {
+    .changeTimeDisplay {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
+.changeTimeDisplay--item {
+    margin-top: 5px;
+}
+
+input {
+    width:100%;
+}
+
+.changeTimeDisplay {
+    margin-top: 30px;
+}

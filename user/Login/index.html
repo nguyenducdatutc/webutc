@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="main.css">
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+
+</head>
+
+<body>
+    <div class="start_page">
+        <p>Hệ thống giám sát</p>
+    </div>
+
+    <div class="start_select">
+        <a class="start_select-need_change" href="./../../start/index.html">Trang chủ</a>
+        <span>|</span>
+        
+        <a class="start_select-not_need_change" href="#">Đăng nhập</a>
+        <span>|</span>
+
+        <a class="start_select-need_change" href="#">Câu hỏi</a>
+        <span>|</span>
+
+        <a class="start_select-need_change" href="#">Trợ giúp</a>
+        <span>|</span>
+
+        <a class="start_select-need_change" href="#">Ngôn ngữ</a>
+    </div>
+
+    <div class="content_page">
+        <p id = "content_page-logo">Đăng nhập</p>
+
+        <form action="#" id="login_information">
+            <label class="login_information-account" for="username">Tài khoản  :</label>
+            <input type="text" name="user_name" placeholder="Enter Username" id="username">
+            <br><br>
+
+            <label class="login_information-password" for="password">Mật khẩu :</label>
+            <input type="password" name="pass_word" placeholder="Enter Password" id="password">
+            <br><br>
+        </form>
+
+        <input type="submit" name="" value="Đăng nhập" id="submit_login">
+        <input type="submit" name="" value="Trang chủ" id="homepage_login">
+        <br><br>
+
+        <a class="content_page-forget_password" href="./../LossPassword/index.html">[ Quên mật khẩu ]</a>
+    </div>
+
+    <div class="end_page">
+        <p class="end_page-content">Contact with me:</p>
+        <span>Facebook:</span>
+        <span class="end_page-facebook">Nguyen Duc Dat</span>
+        <br>
+
+        <span>Zalo:</span>
+        <span class="end_page-zalo">0827417106</span>
+    </div>
+
+    
+</body>
+
+<script src="function_firebase.js"></script>
+
+</html>

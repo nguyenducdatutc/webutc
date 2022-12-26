@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loss Password</title>
+
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="./../Login/main.css">
+
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+
+</head>
+<body>
+    <div class="start_page">
+        <a href="./../Login/index.html">Hệ thống giám sát</a>
+    </div>
+
+    <div class="header_page_note">
+        <p class="header_page_note-content">Nhập địa chỉ email đã đăng ký rồi nhấn nút "Gửi đi", hệ thống sẽ gửi mật khẩu theo địa chỉ email đã đăng ký!</p>
+    </div>
+
+    <div class="content_page">
+        <form action="#" id="content_page-input_email">
+            <label for="email_label" class="content_page-email">Email:</label>
+            <input type="text" name="email_label" placeholder="Nhập Gmail của bạn" id="email">
+            <br><br>
+        </form>
+
+        <input type="submit" name="" value="Lấy lại mật khẩu" id="content_page-get_again_email">
+    </div>
+</body>
+
+<script src="./function.js"></script>
+
+</html>

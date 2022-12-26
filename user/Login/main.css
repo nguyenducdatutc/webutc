@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+:root {
+    --color_background_default : rgb(0, 166, 255);
+}
+
+.start_page {
+    height: 100px;
+    padding-left: 30px;
+    padding-top: 30px;
+
+    background-color: var(--color_background_default) ;
+
+    text-align: left;
+    color: white; 
+}
+
+.start_page p {
+    font-size: 2em;
+}
+
+.start_select {
+    padding-top: 10px;
+    padding-right: 30px;
+
+    background-color:  var(--color_background_default);
+
+    text-align: right;
+    color: white;
+}
+
+.start_select .start_select-need_change {
+    color: white;
+}
+
+.start_select .start_select-not_need_change{
+    font-weight: 900;
+    color: blue;
+}
+
+.start_select .start_select-need_change:hover {
+    font-weight: 900;
+    color: blue;
+}
+
+.content_page {
+    height: 500px;
+    padding-top: 100px;
+    
+    background-color: white;
+
+    text-align: center;
+}
+
+.content_page #content_page-logo{
+    color: black;
+    font-size: 1.8em;
+    font-weight: 900;
+}
+
+.content_page .login_information-account
+{
+    padding-right: 12px;
+}
+
+input[type=text]:hover, input[type=password]:hover {
+    font-weight: 800;
+}
+
+input[type=submit] {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 20px;
+
+    display: inline-block;
+
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    font-weight: 800;
+}
+
+.content_page .content_page-forget_password:hover {
+    color: red;;
+}
+
+.end_page {
+    height: 100px;
+    padding-top: 20px;
+    padding-right: 10px;
+
+    background-color: var(--color_background_default);
+
+    text-align: right;
+    color: white;
+}
+
+.end_page a {
+    color: white;
+}
+
+.end_page .end_page-content {
+    padding-right: 78px;
+}
+
+.end_page .end_page-zalo
+{
+    padding-right: 68px;
+}
+
+.end_page a:hover {
+    color: blue;
+    font-weight: 800;
+}
+

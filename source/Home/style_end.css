@@ -1,0 +1,20 @@
+/* home_page__end  */
+.home_page__end {
+    background-color: blue;
+    min-height: 80px;
+    width: 100%;
+    margin-top: 30px;
+
+    display: flex;
+    /* --> cho 2 thẻ ul nằm ngang cùng 1 hàng */
+    justify-content: space-between;/* đẩy 2 khối ra xa nhau*/
+}
+
+.home_page__end span {
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    padding-top: 25px;
+    padding-right: 10px;
+}
+
