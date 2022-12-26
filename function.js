@@ -1,5 +1,5 @@
 function Into_Main() {
-    window.location.href = "./../user/Login/index.html";
+    window.location.href = "./user/Login/index.html";
 }
 
 // ================================ Run Program ========================================
