@@ -225,7 +225,7 @@ var valueSetBui;
 
 function Get_Value_Set() 
 {
-    var user_ref = my_database.ref('Box5/value_set/');
+    var user_ref = my_database.ref(nameDevice1 + 'value_set/');
   
 
     user_ref.on('value', function (snapshot) 

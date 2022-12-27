@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +12,7 @@
     <link rel="stylesheet" href="./style_end.css">
     <link rel="stylesheet" href="./style_heading_navbar.css">
     <link rel="stylesheet" href="./style_change_time_display.css">
-    
+
     <link rel="stylesheet" href="../../time/style.css">
 
     <script src="../../library/chart/code/highcharts.js"></script>
@@ -21,15 +22,15 @@
     <script src="../../library/chart/code/modules/export-data.js"></script>
     <script src="../../library/chart/code/modules/accessibility.js"></script>
 
-     <!-- Firebase -->
-     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
-     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
-     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script> 
-    
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+
 </head>
 
 <body>
-   <div id="home_page">
+    <div id="home_page">
         <!-- home_page__heading -->
         <div class="home_page__heading">
             <p>Hệ thống giám sát</p>
@@ -41,35 +42,35 @@
                 <a href="./index.html">Trang chủ</a>
 
                 <div class="home_page__navbar__dropdown">
-    
-                  <button class="home_page__navbar__dropdown_btn">Thiết bị
-                    <i class="home_page__navbar__dropdown_btn_notify"></i>
-                  </button>
-    
-                  <div class="home_page__navbar__dropdown__content">
-                    <a href="./../Sensor_1/index.html">Thiết bị 1</a>
-                    <a href="./../Sensor_2/index.html">Thiết bị 2</a>
-                  </div>
-    
+
+                    <button class="home_page__navbar__dropdown_btn">Thiết bị
+                        <i class="home_page__navbar__dropdown_btn_notify"></i>
+                    </button>
+
+                    <div class="home_page__navbar__dropdown__content">
+                        <a href="./../Sensor_1/index.html">Thiết bị 1</a>
+                        <a href="./../Sensor_2/index.html">Thiết bị 2</a>
+                    </div>
+
                 </div>
             </div>
 
-            <div class="timeCurrent">   
-                <span id="timeCurrent-day">0</span>  <span>/</span>
+            <div class="timeCurrent">
+                <span id="timeCurrent-day">0</span> <span>/</span>
                 <span id="timeCurrent-month">0</span> <span>/</span>
                 <span id="timeCurrent-year">0</span><br>
 
                 <span id="timeCurrent-hour">0</span> <span>:</span>
                 <span id="timeCurrent-minute">0</span> <span>:</span>
-                <span id="timeCurrent-second">0</span> 
-                <span id="timeCurrent-AMPM">AM</span>              
+                <span id="timeCurrent-second">0</span>
+                <span id="timeCurrent-AMPM"></span>
             </div>
 
             <div class="home_page__navbar__login_logout">
                 <a href="./../../user/ChangeInformation/index.html">Tài khoản</a>
                 <a href="./../../user/Login/index.html">Đăng xuất</a>
             </div>
-           
+
         </div>
 
         <!-- home_page__content -->
@@ -77,12 +78,12 @@
             <div class="block_1 home_page__content--item">
                 <div class="block_1--item">
                     <p><b>Thiết bị 1</b></p>
-                    <p >Trạng thái:</p>
+                    <p>Trạng thái:</p>
                     <p id="logoCo1">Co</p>
                     <p id="logoGas1">Gas</p>
                     <p id="logoBui1">Bụi</p>
                 </div>
-                
+
                 <div class="block_1--item">
                     <br>
                     <p id="status_current1">An toàn</p>
@@ -102,11 +103,11 @@
                     <p id="logoGas2">Gas</p>
                     <p id="logoBui2">Bụi</p>
                 </div>
-                
+
                 <div class="block_2--item">
                     <br>
                     <p id="status_current2">An toàn</p>
-                    <span id="valueGetCo2">00</span> <span id="donVi_Co2" >ppm</span><br>
+                    <span id="valueGetCo2">00</span> <span id="donVi_Co2">ppm</span><br>
                     <span id="valueGetGas2">00</span> <span id="donVi_Gas2">ppm</span><br>
                     <span id="valueGetBui2">00</span> <span id="donVi_Bui2">ppm</span><br>
                 </div>
@@ -116,56 +117,123 @@
         <!-- home_page__graph -->
         <div class="home_page__chart">
             <div id="home_page__chart--display"></div>
-            <!-- <div id="chartContainer" style="height: 300px; width: 100%;"></div> -->
         </div>
 
-         <!-- home_page__graph -->
+        <!-- home_page__graph2 -->
         <div class="home_page__chart2">
             <div id="home_page__chart--display2"></div>
-            <!-- <div id="chartContainer" style="height: 300px; width: 100%;"></div> -->
         </div>
 
         <!-- Change time display graph  -->
-        <div class="changeTimeDisplay">
+        <div class="changeTimeDisplay" id="id_changeTimeDisplay--item">
             <div class="changeTimeDisplay--item">
-                <p><b>Thời gian mong muốn</b></p>
+                <p><b>Thời gian quá khứ</b></p>
             </div>
 
-            <div class="days changeTimeDisplay--item">
+            <div class="days changeTimeDisplay--item" >
                 <label class="days--item" for="days_display">Ngày: </label>
-                <input type="text" name="display_days" placeholder="Nhập ngày vd:15" id="days_display">
+                <!-- <input type="text" name="display_days" placeholder="Nhập ngày vd:15" id="days_display"> -->
+                <select name="" id="days_display">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                </select>
             </div>
 
             <div class="months changeTimeDisplay--item">
                 <label class="months--item" for="months_display">Tháng: </label>
-                <input type="text" name="display_months" placeholder="Nhập tháng vd:1 " id="months_display">
+                <!-- <input type="text" name="display_months" placeholder="Nhập tháng vd:1 " id="months_display"> -->
+                <select name="" id="months_display">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
             </div>
 
             <div class="years changeTimeDisplay--item">
                 <label class="years--item" for="years_display">Năm: </label>
-                <input type="text" name="display_years" placeholder="Nhập năm vd:22" id="years_display">
+                <!-- <input type="text" name="display_years" placeholder="Nhập năm vd:22" id="years_display"> -->
+                <select name="" id="years_display">
+                   
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    
+                </select>
+            </div>
+
+            <div class="device changeTimeDisplay--item">
+                <label for="">Thiết bị số</label>
+                <select name="" id="device_display">
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
             </div>
 
             <div class="submits changeTimeDisplay--item">
-                <br>
                 <input type="submit" name="" value="Hiển thị" id="display_chart_new">
             </div>
 
             <div class="clears_input changeTimeDisplay--item">
-                <br>
                 <input type="submit" name="" value="Xoá" id="clears_input">
+            </div>
+        </div>
+
+        <div>
+             <!-- home_page__graph2 -->
+            <div class="home_page__chart3">
+                <div id="home_page__chart--display3"></div>
             </div>
         </div>
 
         <!-- home_page__end -->
         <div class="home_page__end">
-            <span></span>    <!-- Xoá dòng này, chữ hiện thị sẽ không bám phải nữa -->
+            <span></span> <!-- Xoá dòng này, chữ hiện thị sẽ không bám phải nữa -->
             <span>Giao diện web hệ thống giám sát khí thải độc hại trong giao thông (Version1.1)</sp>
         </div>
-   </div>
+    </div>
 </body>
 
 <script src="./app_chart.js"></script>
-<script src="./app.js"></script>
 
 </html>
