@@ -1,5 +1,5 @@
-var nameDevice1 = 'Box5/';
-var nameDevice2 = 'Box5/';
+var nameDevice1 = 'Box1/';
+var nameDevice2 = 'Box2/';
 
 // Your web app's Firebase configuration
 const firebaseConfig1 = {
@@ -1223,7 +1223,7 @@ document.getElementById("display_chart_new").onclick = function () {
         Clear_All_Data_Search();
         countOK = 0;
 
-        alert('SOS    Thời gian không tồn tại \nhoặc thiết bị không tồn tại.   SOS\n\nXin kiểm tra lại.');
+        alert('Thời gian không tồn tại hoặc thiết bị không tồn tại. \nXin kiểm tra lại.');
     }
     if(result == 1)
     {

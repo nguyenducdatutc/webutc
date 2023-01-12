@@ -17,7 +17,7 @@
 
 <body>
     <div class="start_page">
-        <p>Hệ thống giám sát 1</p>
+        <p>Hệ thống giám sát</p>
     </div>
 
     <div class="start_select">
@@ -37,23 +37,35 @@
     </div>
 
     <div class="content_page">
+    
         <p id = "content_page-logo">Đăng nhập</p>
 
-        <form action="#" id="login_information">
-            <label class="login_information-account" for="username">Tài khoản  :</label>
-            <input type="text" name="user_name" placeholder="Enter Username" id="username">
-            <br><br>
+    
+        <div class="input_text">
+            <label class="login_information-account">Tài khoản:</label>
+            <input type="text" name="user_name" placeholder="Enter Username" id="username">    
+        </div>
 
-            <label class="login_information-password" for="password">Mật khẩu :</label>
-            <input type="password" name="pass_word" placeholder="Enter Password" id="password">
+        <div class="input_text">
+            <br>
+            <label class="login_information-password">Mật khẩu id:</label>
+            <input type="password" name="pass_word" placeholder="Enter Password" id="password">   
+        </div>
+
+        <div class="check">
+            <br>
+            <input type= "checkbox">
+            Remember me
             <br><br>
-        </form>
+        </div>
 
         <input type="submit" name="" value="Đăng nhập" id="submit_login">
         <input type="submit" name="" value="Trang chủ" id="homepage_login">
         <br><br>
 
         <a class="content_page-forget_password" href="./../LossPassword/index.html">[ Quên mật khẩu ]</a>
+        
+        </div>
     </div>
 
     <div class="end_page">
@@ -65,8 +77,6 @@
         <span>Zalo:</span>
         <span class="end_page-zalo">0827417106</span>
     </div>
-
-    
 </body>
 
 <script src="function_firebase.js"></script>

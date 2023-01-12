@@ -25,7 +25,7 @@ body {
     margin-top: 16px;
 
     /* xét kích thước main size */
-    flex-basis: 20%;
+    flex-basis: 40%;
 }
 
 .home_page__content--item:nth-child(1) {

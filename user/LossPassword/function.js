@@ -9,13 +9,10 @@ const firebaseConfig1 = {
     appId: "1:457897367163:web:0ba514c3f54782499fb4de"
 };
 
-
 firebase.initializeApp(firebaseConfig1);
 firebase.analytics();
 
-
 var my_database = firebase.database();
-
 
 ///=========Send Email======================
 function SendEmail(emailReceiveText, text) 

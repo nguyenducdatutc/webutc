@@ -1,4 +1,4 @@
-var nameDevice2 = 'Box5/';
+var nameDevice2 = 'Box2/';
 
 const firebaseConfig1 = {
     apiKey: "AIzaSyCeFg0Vnj6TXU-j4VvL-BhwVFkj8negsLE",

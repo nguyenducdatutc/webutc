@@ -1,4 +1,4 @@
-var nameDevice1 = 'Box5/';
+var nameDevice1 = 'Box1/';
 
 const firebaseConfig1 = {
     apiKey: "AIzaSyCeFg0Vnj6TXU-j4VvL-BhwVFkj8negsLE",
@@ -146,7 +146,7 @@ function Check_Set_Value_Co() {
         co: number_set
     }
 
-    my_database.ref('Box5/value_set').update(update)
+    my_database.ref(nameDevice1 + '/value_set').update(update)
 }
 
 document.getElementById("subValueCo").onclick = function () {
@@ -174,7 +174,7 @@ function Check_Set_Value_Gas() {
         gas: number_set
     }
 
-    my_database.ref('Box5/value_set').update(update)
+    my_database.ref(nameDevice1 + '/value_set').update(update)
 }
 
 document.getElementById("subValueGas").onclick = function () {
@@ -202,7 +202,7 @@ function Check_Set_Value_Bui() {
         bui: number_set
     }
 
-    my_database.ref('Box5/value_set').update(update);
+    my_database.ref(nameDevice1 + '/value_set').update(update);
 }
 
 document.getElementById("subValueBui").onclick = function () {

@@ -6,11 +6,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Change information</title>
     <link rel="stylesheet" href="main.css">
+
+     <!-- Firebase -->
+     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+ 
 </head>
 <body>
-    <div>
-        <p>Change information</p>
+    <div class="Header_Change_Info">
+        <h1>Thay đổi thông tin</h1>
     </div>
+
+    <div class="Content_Change_Info">
+        <div class="Change_User">
+            <h2>Tài khoản người dùng:</h2>
+            <div class="Change_User--Gmail">
+                <label for="gmailNew">Gmail mới:</label><br>
+                <input type="text" name="gmail_new" placeholder="Nhập Gmail" id="gmailNew">
+            </div>
+
+            <div class="Change_User--Name">
+                <label for="username">Tên đăng nhập mới:</label><br>
+                <input type="text" name="user_name" placeholder="Nhập tên mới" id="userName">
+            </div>
+
+            <div class="Change_User--Pass">
+                <label for="userPass">Mật khẩu mới:</label><br>
+                <input type="text" name="user_pass" placeholder="Nhập mật khẩu mới" id="userPass">
+            </div>
+
+            <div class="Change_User--Submit">
+                <br>
+                <input type="submit" name="" value="Cập nhật" id="updateUser">
+            </div>
+            <br><br>
+        </div>
+
+        <div class="Change_Wifi">
+            <div class="Change_Wifi--Device1">
+                <h2>Thiết bị 1:</h2>
+                <label for="NameWifiNew">Tên Wifi:</label><br>
+                <input type="text" name="name_wifi_new" placeholder="Nhập tên wifi:" id="NameWifiNew1">
+                <br>
+                <label for="PassWifiNew">Mật khẩu:</label><br>
+                <input type="text" name="pass_wifi_new" placeholder="Nhập mật khẩu mới" id="PassWifiNew1">
+
+                <br>
+                <br>
+                <input type="submit" name="" value="Cập nhật" id="updateWifi1">
+            </div>
+            <br><br>
+
+            <div class="Change_Wifi--Device2">
+                <h2>Thiết bị 2:</h2>
+                <label for="NameWifiNew">Tên Wifi:</label><br>
+                <input type="text" name="name_wifi_new" placeholder="Nhập tên wifi:" id="NameWifiNew2">
+                <br>
+                <label for="PassWifiNew">Mật khẩu:</label><br>
+                <input type="text" name="pass_wifi_new" placeholder="Nhập mật khẩu mới" id="PassWifiNew2">
+
+                <br>
+                <br>
+                <input type="submit" name="" value="Cập nhật" id="updateWifi2">
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="bottomChangeInfor">
+        <br><br>
+        <input type="submit" name="" value="Thoát" id="DeleteUpdate">
+    </div>
+
+   
 
     <script src="function.js"></script>
 </body>
