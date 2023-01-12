@@ -1,5 +1,5 @@
-var nameDevice1 = 'Box1/';
-var nameDevice2 = 'Box2/';
+var nameDevice1 = '/Box1/';
+var nameDevice2 = '/Box2/';
 
 // Your web app's Firebase configuration
 const firebaseConfig1 = {
