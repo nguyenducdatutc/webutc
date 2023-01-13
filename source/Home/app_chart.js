@@ -1,5 +1,5 @@
-var nameDevice1 = '/Box1/';
-var nameDevice2 = '/Box2/';
+var nameDevice1 = 'Box1/';
+var nameDevice2 = 'Box2/';
 
 // Your web app's Firebase configuration
 const firebaseConfig1 = {
@@ -130,6 +130,8 @@ function Replace_Time_Current() {
 var valueGetCo1;
 var valueGetGas1;
 var valueGetBui1;
+var valueGettemp1;
+
 
 var time_New;
 
@@ -150,20 +152,42 @@ function Get_Value_Display1() {
         {
             valueGetCo1 = data1.Co;
         }
+        else
+        {
+            valueGetCo1 = 15;
+        }
 
         if(data1.Gas !== 'null')
         {
             valueGetGas1 = data1.Gas;
+        }
+        else
+        {
+            valueGetGas1 = 10;
         }
         
         if(data1.Bui !== 'null')
         {
             valueGetBui1 = data1.Bui;
         }
+        else
+        {
+            valueGetBui1 = 5
+        }
+
+        if(data1.Temp !== 'null')
+        {
+            valueGetTemp1 = data1.Temp;
+        }
+        else
+        {
+            valueGetTemp1 = 25;
+        }
 
         document.getElementById("valueGetCo1").innerHTML = valueGetCo1;
         document.getElementById("valueGetGas1").innerHTML = valueGetGas1;
         document.getElementById("valueGetBui1").innerHTML = valueGetBui1;
+        document.getElementById("valueGetTemp1").innerHTML = valueGetTemp1;
 
         
     });
@@ -174,6 +198,7 @@ function Get_Value_Display1() {
 var valueGetCo2;
 var valueGetGas2;
 var valueGetBui2;
+var valueGetTemp2;
 
 function Get_Value_Display2() {
     let time = Create_Time_Need();
@@ -190,20 +215,42 @@ function Get_Value_Display2() {
         {
             valueGetCo2 = data2.Co;
         }
+        else
+        {
+            valueGetCo2 = 15;
+        }
 
         if(data2.Gas !== 'null')
         {
             valueGetGas2 = data2.Gas;
+        }
+        else
+        {
+            valueGetGas2 = 10;
         }
         
         if(data2.Bui !== 'null')
         {
             valueGetBui2 = data2.Bui;
         }
+        else
+        {
+            valueGetBui2 = 5;
+        }
+
+        if(data2.Temp !== 'null')
+        {
+            valueGetTemp2 = data2.Temp;
+        }
+        else
+        {
+            valueGetTemp2 = 25;
+        }
 
         document.getElementById("valueGetCo2").innerHTML = valueGetCo2;
         document.getElementById("valueGetGas2").innerHTML =  valueGetGas2;
         document.getElementById("valueGetBui2").innerHTML = valueGetBui2;
+        document.getElementById("valueGetTemp2").innerHTML = valueGetTemp2;
     });
 
     // console.log();
@@ -519,6 +566,8 @@ function Extra_Time()
             count++;
         }
     }
+
+    console.log(chartTimeCurrent);
 }
 
 Extra_Time();
@@ -979,7 +1028,7 @@ function Run_Automation_Slow()
     Set_State_Current2();
     Get_Value_Display2();
 }
-setInterval(Run_Automation_Slow, 15000);
+setInterval(Run_Automation_Slow, 25000);
 
 
 var dataCo_News = [];
@@ -997,6 +1046,8 @@ function Run_Automation_Minutes()
     var _time_New = ['00:00'];
     _time_New = time_New.substring(0, 2) + ':' + time_New.substring(2);
     lable_News.push(_time_New);
+
+    console.log(lable_News);
 
     //1
     dataCo_News.push(valueGetCo1);
@@ -1026,7 +1077,7 @@ function Run_Automation_Minutes()
     dataBui_News2.push(valueGetBui2);
     myChart2.series[2].setData(dataBui_News2);
 }
-setInterval(Run_Automation_Minutes, 25000);
+//setInterval(Run_Automation_Minutes, 15000);
 
 function Run_One_Time() {
     Get_Value_Set1();
@@ -1042,10 +1093,14 @@ function Run_One_Time() {
 var coutRun_StartUp = 0;
 function Run_StartUp()
 {
+    var _ii = 0;
     if(coutRun_StartUp == 0)
     {
-        Get_Data_Sensor_When_StartUp();
+        //Get_Data_Sensor_When_StartUp();
 
+        Run_One_Time();
+        Run_One_Time();
+        Run_One_Time();
         Run_One_Time();
 
         if((typeof data_get_chart)  !== "undefined") 
@@ -1060,47 +1115,62 @@ function Run_StartUp()
 
         for(_i = 0; _i < (60*24); _i++)
         {
-            if((typeof data_get_chart[chartTimeCurrent[_i]]) !== 'undefined')
+            if( ( (typeof data_get_chart[chartTimeCurrent[_i]]) !== 'undefined' ) && ((typeof data_get_chart2[chartTimeCurrent[_i]]) !== 'undefined'))
             {
                 var _time_temp = chartTimeCurrent[_i];
                 _time_temp = _time_temp.substring(0, 2) + ':' + _time_temp.substring(2);
                 lable_News.push(_time_temp);
-
+            
                 dataCo_News.push(data_get_chart[chartTimeCurrent[_i]].Co);
                 dataGas_News.push(data_get_chart[chartTimeCurrent[_i]].Gas);
                 dataBui_News.push(data_get_chart[chartTimeCurrent[_i]].Bui);
-            }
 
-            if((typeof data_get_chart2[chartTimeCurrent[_i]]) !== 'undefined')
-            {
                 dataCo_News2.push(data_get_chart2[chartTimeCurrent[_i]].Co);
                 dataGas_News2.push(data_get_chart2[chartTimeCurrent[_i]].Gas);
                 dataBui_News2.push(data_get_chart2[chartTimeCurrent[_i]].Bui);
+
+                _ii = 1;
             }
+
+            // if((typeof data_get_chart2[chartTimeCurrent[_i]]) !== 'undefined')
+            // {
+            //     dataCo_News2.push(data_get_chart2[chartTimeCurrent[_i]].Co);
+            //     dataGas_News2.push(data_get_chart2[chartTimeCurrent[_i]].Gas);
+            //     dataBui_News2.push(data_get_chart2[chartTimeCurrent[_i]].Bui);
+            // }
         }
 
         //1
-        myChart.series[0].setData(dataCo_News);
-        myChart.series[1].setData(dataGas_News);
-        myChart.series[2].setData(dataBui_News);
 
-        myChart.xAxis[0].update({
-            categories: lable_News
-        });
+        if(_ii == 1)
+        {
+            myChart.series[0].setData(dataCo_News);
+            myChart.series[1].setData(dataGas_News);
+            myChart.series[2].setData(dataBui_News);
+
+            myChart.xAxis[0].update({
+                categories: lable_News
+            });
+        }
+        
 
         //2
-        myChart2.series[0].setData(dataCo_News2);
-        myChart2.series[1].setData(dataGas_News2);
-        myChart2.series[2].setData(dataBui_News2);
+        // myChart2.series[0].setData(dataCo_News2);
+        // myChart2.series[1].setData(dataGas_News2);
+        // myChart2.series[2].setData(dataBui_News2);
 
-        myChart2.xAxis[0].update({
-            categories: lable_News
-        });
+        // myChart2.xAxis[0].update({
+        //     categories: lable_News
+        // });
         
-        coutRun_StartUp = 2;
+        // coutRun_StartUp = 2;
     }
 }
-setInterval(Run_StartUp, 300);
+setInterval(Run_StartUp, 500);
+
+// Get_Data_Sensor_When_StartUp();
+
+// Run_One_Time();
 
 
 //========================= Choose day to display==================================
@@ -1126,7 +1196,7 @@ function Input_Data_Need_Search() {
 }
 
 function Delete_Input_Search() {
-    document.getElementById("days_display").value = '1';
+    document.getElementById("days_display").value = '25';
     document.getElementById("months_display").value = '12';
     document.getElementById("years_display").value = '2022';
     document.getElementById("device_display").value = '5';
@@ -1153,6 +1223,8 @@ function Get_Data_In_Day_Want()
     var date_need = (daySearch.toString() + monthSearch.toString() + (yearSearch % 2000).toString());
 
     let path = 'Box' + nameDeviceSearch + '/' + date_need + '/';
+
+    console.log(path);
 
     let user_ref = my_database.ref(path);
     user_ref.on('value', function (snapshot) 
@@ -1196,6 +1268,8 @@ function Get_Data_In_Day_Want()
         categories: lable_News3
     });
 
+    
+
     return 6;
 }
 
@@ -1238,7 +1312,6 @@ document.getElementById("display_chart_new").onclick = function () {
     }
 }
 
-
 document.getElementById("clears_input").onclick = function () 
 {
     countOK = 0;
@@ -1252,3 +1325,8 @@ document.getElementById("clears_input").onclick = function ()
     document.getElementById("home_page__chart--display3").style.height = "0px";
     document.getElementById("home_page__chart--display3").style.marginTop = "0px";  
 }
+
+
+
+
+

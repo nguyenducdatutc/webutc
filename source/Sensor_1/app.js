@@ -106,6 +106,7 @@ function Set_Value_Display_Debug()
 var valueGetCo;
 var valueGetGas;
 var valueGetBui;
+var valueGetTemp;
 
 function Get_Value_Display() {
     getTimeCurrent();
@@ -126,10 +127,12 @@ function Get_Value_Display() {
         valueGetCo = data.Co;
         valueGetGas = data.Gas;
         valueGetBui = data.Bui;
+        valueGetTemp = data.Temp;
 
         document.getElementById("valueGetCo").innerHTML = valueGetCo;
         document.getElementById("valueGetGas").innerHTML = valueGetGas;
         document.getElementById("valueGetBui").innerHTML = valueGetBui;
+        document.getElementById("valueGetTemp").innerHTML = valueGetTemp;
     });
 }
 
